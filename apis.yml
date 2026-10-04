@@ -39,7 +39,6 @@ apis:
   - name: vk
     description: "Read and write vk data"
     humanURL: https://vk.com/dev/sites
-    baseURL: https://vk.com/dev/sites
     tags:
       - Social
     properties:
