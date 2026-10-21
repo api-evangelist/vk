@@ -1,24 +1,5 @@
 generated: '2026-10-14'
 edges:
-- partner_name: mParticle
-  partner: mparticle
-  partner_match: aggregator
-  marketplace: coverage
-  channel: partner-built
-  direction: partner-built
-  type: coverage
-  relationship: connector-coverage
-  evidence: https://docs.mparticle.com/integrations/vkontakte/audience/
-  coverage_role:
-  - destination
-  cdp_signals:
-    destination:
-      catalog_entries:
-      - vkontakte
-      integration_types:
-      - audience
-  detected_by: sweep-cdp.py
-  first_seen: '2026-10-14'
 - partner_name: Zapier
   partner: zapier
   partner_match: aggregator
@@ -44,8 +25,45 @@ edges:
     builder: unknown (not in the directory record)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: mParticle
+  partner: mparticle
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://docs.mparticle.com/integrations/vkontakte/audience/
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - vkontakte
+      integration_types:
+      - audience
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
+- partner_name: Pulumi (pulumi-registry)
+  partner: pulumi
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: pulumi-registry
+  evidence: https://www.pulumi.com/registry/packages/vkcs/
+  mirror_of: pulumi/integrations/pulumi-integration-edges.yml
+  apps:
+  - vkcs
+  listing_count: 1
+  detected: '2026-10-21'
+  detected_by: mirror-platform-listings.py
+  category: infrastructure-as-code provider registry listing
 method: searched
 checked:
 - https://docs.mparticle.com/integrations/vkontakte/audience/
 - https://zapier.com/api/v4/apps/
+- pulumi/integrations/pulumi-integration-edges.yml
 source: https://docs.mparticle.com/integrations/vkontakte/audience/
